@@ -1,0 +1,125 @@
+*, html
+  box-sizing: border-box
+  &:focus
+    outline: 2px solid $white
+    outline-offset: 2px
+
+html
+  scroll-behavior: smooth
+
+body
+  min-height: 100vh
+  min-width: 320px
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: $u24
+  padding: $u24 0
+  background-color: $purple800
+  background: linear-gradient(to bottom, $purple700, $purple800)
+
+header, main, footer
+  width: 100%
+  max-width: 720px
+
+header, footer
+  padding: $u8 $u24
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  gap: $u32
+
+footer
+  padding-top: $u16
+
+main
+  width: 100%
+  display: flex
+  flex-direction: column
+  gap: $u24
+  flex: 1
+
+.panel, #urls
+  display: flex
+  flex-direction: column
+  gap: $u16
+
+.panel
+  padding: $u20 $u20 $u24
+  border-radius: $u16
+  @include glass
+  @include outline
+  
+nav
+  ul
+    list-style: none
+    display: flex
+    gap: $u8
+    margin-left: -($u12)
+    margin-right: -($u12)
+
+  a
+    padding: $u8 $u12
+    text-decoration: none
+    font-weight: 500
+    color: $textlight
+    border-radius: $u8
+    border: $u1 solid transparent
+    &:hover
+      background-color: $purple900
+
+.active
+  @include glass
+  @include outline
+  
+.active:hover
+  @include glasshover
+
+input, textarea, button
+  width: 100%
+  padding: $u12
+  border: none
+
+input, textarea
+  border-radius: $u4
+  font-weight: 400
+  color: $textdark
+  &:focus
+    outline: $u2 solid $yellow400
+
+input::placeholder
+  color: $placeholder
+
+.input-wrapper
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: $u12
+
+.actions
+  width: 100%
+  display: flex
+  flex-direction: row
+  align-items: center
+  gap: $u8
+
+@media screen and (min-width: 480px)
+  body
+    padding: $u24
+  header, footer
+    flex-direction: row
+    justify-content: space-between
+  .input-wrapper
+    flex-direction: row
+  .actions
+    width: auto
+  .panel
+    padding: $u20 $u24 $u24
+
+@media screen and (min-width: 768px)
+//
+
+@media screen and (min-width: 1024px)
+//

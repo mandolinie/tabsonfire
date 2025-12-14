@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>TabsOnFire 🔥🗂️</title>
+    <meta name="author" content="Manuel Blex">
+    <meta name="description" content="TabsOnFire 🔥🗂️ — Easily create, edit and reorder Firefox's pipe-separated startup URLs. Build the snippet or paste one to split it into individual tabs.">
+    <!-- Style-->
+    <link href="../css/main.css" rel="stylesheet">
+    <!-- OpenGraph-->
+    <meta name="og:site_name" content="TabsOnFire 🔥🗂️">
+    <meta name="og:title" content="TabsOnFire 🔥🗂️">
+    <meta name="og:type" content="Website">
+    <meta name="og:url" content="https://tabsonfire.github.io">
+    <meta name="og:description" content="TabsOnFire 🔥🗂️ — Easily create, edit and reorder Firefox's pipe-separated startup URLs. Build the snippet or paste one to split it into individual tabs.">
+    <meta name="og:image " content="../img/favicon/web-app-manifest-512x512.png">
+    <meta name="og:image:type" content="image/png">
+    <meta name="og:image:width" content="512">
+    <meta name="og:image:height" content="512">
+    <!-- Favicon--><link rel="icon" type="image/png" href="../img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="../img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="../img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="FireTabs" />
+<link rel="manifest" href="../img/favicon/site.webmanifest" />
+  </head>
+  <body id="index">
+    <div id="cookies">
+      <div id="cookiesDimmer">
+        <div id="cookiesModal">
+          <h3>Tracking anonymized usage data</h3>
+          <p>This page uses Google Analytics. By accepting tracking, you're helping me – a nerdy Designer/Dev 🤓 – to improve my skills and build better products. Read more under <a href="/privacy"> privacy</a>.</p>
+          <div id="cookiesActions">
+            <button class="primary" id="cookiesAcceptButton">Accept</button>
+            <button class="secondary" id="cookiesDeclineButton">Decline</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header>
+      <div class="logo"><a href="/index" data-page="index"><span>TabsOnFire</span> 🔥🗂️</a></div>
+      <nav>
+        <ul>
+          <li><a href="/index" data-page="index">Create</a></li>
+          <li><a href="/about" data-page="about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <template id="arrowTemplate">
+      <div class="actions">
+        <button class="upBtn secondary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1733_133" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="currentColor"/>
+</mask>
+<g mask="url(#mask0_1733_133)">
+<path d="M10.8625 22.2031V6.14759L6.388 10.6091L4.79675 9.01184L12 1.80859L19.2093 9.01184L17.612 10.6281L13.1375 6.14759V22.2031H10.8625Z" fill="currentColor"/>
+</g>
+</svg>
+
+        </button>
+        <button class="downBtn secondary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1733_115" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="currentColor"/>
+</mask>
+<g mask="url(#mask0_1733_115)">
+<path d="M12 22.2031L4.79675 14.9998L6.388 13.4026L10.8625 17.8638V1.80859H13.1375V17.8638L17.612 13.3836L19.2093 14.9998L12 22.2031Z" fill="currentColor"/>
+</g>
+</svg>
+
+        </button>
+        <button class="removeBtn danger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1733_151" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="currentColor"/>
+</mask>
+<g mask="url(#mask0_1733_151)">
+<path d="M4.65923 21.2033V6.06582H3.52173V3.79082H8.86248V2.65332H15.1255V3.79082H20.4782V6.06582H19.3407V21.2033H4.65923ZM6.93423 18.9283H17.0657V6.06582H6.93423V18.9283ZM8.89248 16.9941H11.03V7.99407H8.89248V16.9941ZM12.97 16.9941H15.1075V7.99407H12.97V16.9941Z" fill="currentColor"/>
+</g>
+</svg>
+
+        </button>
+      </div>
+    </template>
+    <main>
+      <div class="panel">
+        <h3>Single URLs</h3>
+        <div id="urls">
+          <div class="input-wrapper">
+            <input class="url-input" type="text" placeholder="https://www.example.com">
+            <div class="actions">
+              <button class="upBtn secondary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1733_133" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="currentColor"/>
+</mask>
+<g mask="url(#mask0_1733_133)">
+<path d="M10.8625 22.2031V6.14759L6.388 10.6091L4.79675 9.01184L12 1.80859L19.2093 9.01184L17.612 10.6281L13.1375 6.14759V22.2031H10.8625Z" fill="currentColor"/>
+</g>
+</svg>
+
+              </button>
+              <button class="downBtn secondary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1733_115" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="currentColor"/>
+</mask>
+<g mask="url(#mask0_1733_115)">
+<path d="M12 22.2031L4.79675 14.9998L6.388 13.4026L10.8625 17.8638V1.80859H13.1375V17.8638L17.612 13.3836L19.2093 14.9998L12 22.2031Z" fill="currentColor"/>
+</g>
+</svg>
+
+              </button>
+              <button class="removeBtn danger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1733_151" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="currentColor"/>
+</mask>
+<g mask="url(#mask0_1733_151)">
+<path d="M4.65923 21.2033V6.06582H3.52173V3.79082H8.86248V2.65332H15.1255V3.79082H20.4782V6.06582H19.3407V21.2033H4.65923ZM6.93423 18.9283H17.0657V6.06582H6.93423V18.9283ZM8.89248 16.9941H11.03V7.99407H8.89248V16.9941ZM12.97 16.9941H15.1075V7.99407H12.97V16.9941Z" fill="currentColor"/>
+</g>
+</svg>
+
+              </button>
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <input class="url-input" type="text" placeholder="https://www.example.com">
+            <div class="actions">
+              <button class="upBtn secondary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1733_133" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="currentColor"/>
+</mask>
+<g mask="url(#mask0_1733_133)">
+<path d="M10.8625 22.2031V6.14759L6.388 10.6091L4.79675 9.01184L12 1.80859L19.2093 9.01184L17.612 10.6281L13.1375 6.14759V22.2031H10.8625Z" fill="currentColor"/>
+</g>
+</svg>
+
+              </button>
+              <button class="downBtn secondary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1733_115" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="currentColor"/>
+</mask>
+<g mask="url(#mask0_1733_115)">
+<path d="M12 22.2031L4.79675 14.9998L6.388 13.4026L10.8625 17.8638V1.80859H13.1375V17.8638L17.612 13.3836L19.2093 14.9998L12 22.2031Z" fill="currentColor"/>
+</g>
+</svg>
+
+              </button>
+              <button class="removeBtn danger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1733_151" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="currentColor"/>
+</mask>
+<g mask="url(#mask0_1733_151)">
+<path d="M4.65923 21.2033V6.06582H3.52173V3.79082H8.86248V2.65332H15.1255V3.79082H20.4782V6.06582H19.3407V21.2033H4.65923ZM6.93423 18.9283H17.0657V6.06582H6.93423V18.9283ZM8.89248 16.9941H11.03V7.99407H8.89248V16.9941ZM12.97 16.9941H15.1075V7.99407H12.97V16.9941Z" fill="currentColor"/>
+</g>
+</svg>
+
+              </button>
+            </div>
+          </div>
+        </div>
+        <button class="secondary" id="addBtn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1733_142" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="currentColor"/>
+</mask>
+<g mask="url(#mask0_1733_142)">
+<path d="M10.8625 13.1376H4.79675V10.8626H10.8625V4.79688H13.1375V10.8626H19.2033V13.1376H13.1375V19.2034H10.8625V13.1376Z" fill="currentColor"/>
+</g>
+</svg>
+          Add another URL
+        </button>
+      </div>
+      <div class="panel">
+        <h3>Compound URL snippet</h3>
+        <textarea id="snippet" rows="5" cols="50" placeholder="Paste existing snippet to see all URLs listed above"></textarea>
+        <button class="primary" id="copyBtn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1733_121" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="currentColor"/>
+</mask>
+<g mask="url(#mask0_1733_121)">
+<path d="M6.9343 18.0657V1.65918H20.3408V18.0657H6.9343ZM9.2093 15.7907H18.0658V3.93418H9.2093V15.7907ZM2.6593 22.3407V5.93418H4.9343V20.0657H16.0658V22.3407H2.6593Z" fill="currentColor"/>
+</g>
+</svg>
+          Copy snippet
+        </button>
+      </div>
+      <section id="info-accordions">
+        <details>
+          <summary>
+            <h2>How Firefox startup tabs work</h2>
+          </summary>
+          <div class="content">
+            <p>
+              Firefox allows you to open multiple tabs automatically on browser start.
+              To do this, Firefox expects a single string of URLs separated by the pipe character <code>|</code> in the Homepage setting.
+            </p>
+            <p>Each URL between two pipes is opened as a separate tab when Firefox starts.</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <h2>Why TabsOnFire 🔥🗂️ exists</h2>
+          </summary>
+          <div class="content">
+            <p>
+              While the feature itself is powerful, editing pipe-separated URLs in a single-line input field
+              is error-prone and frustrating.
+            </p>
+            <p>
+              TabsOnFire 🔥🗂️ turns that hidden configuration string into a clear, editable list
+              so you can manage your startup tabs comfortably.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <h2>How to use TabsOnFire 🔥🗂️</h2>
+          </summary>
+          <div class="content">
+            <p>TabsOnFire works both ways: you can create a new Firefox startup snippet from scratch, or edit an existing one.</p>
+            <h3>Create a New Snippet</h3>
+            <ol>
+              <li>Enter the URLs of the pages you want to open at startup, one by one.</li>
+              <li>Reorder, edit, or remove any URL as needed.</li>
+              <li>Copy the generated pipe-separated snippet.</li>
+              <li>Paste it into Firefox → Settings → Home → "Homepage and new windows."</li>
+            </ol>
+            <h3>Edit an Existing Snippet</h3>
+            <ol>
+              <li>Paste your current Firefox pipe-separated snippet into TabsOnFire 🔥🗂️.</li>
+              <li>The tool splits it into individual URLs for easy editing.</li>
+              <li>Reorder, edit, or remove URLs as needed.</li>
+              <li>Copy the updated snippet and paste it back into Firefox settings.</li>
+            </ol>
+            <p>TabsOnFire 🔥🗂️ keeps everything local — nothing is stored or sent anywhere — so you can safely edit your startup tabs without worrying about privacy.</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <h2>Already have a Firefox startup snippet?</h2>
+          </summary>
+          <div class="content">
+            <p>
+              Paste your existing pipe-separated homepage string into TabsOnFire 🔥🗂️.
+              The tool will split it into individual URLs so you can edit and reorganize them easily.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <h2>FAQ</h2>
+          </summary>
+          <div class="content">
+            <p class="question"><strong>Can Firefox open multiple tabs on startup?</strong></p>
+            <p class="answer">Yes. Firefox supports multiple startup tabs using pipe-separated URLs in the Homepage setting.</p>
+            <p class="question"><strong>Does TabsOnFire 🔥🗂️ store my URLs?</strong></p>
+            <p class="answer">No. Everything runs locally in your browser. No data is sent or stored anywhere.</p>
+          </div>
+        </details>
+      </section>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/legal" data-page="legal">Legal</a></li>
+          <li><a href="/privacy" data-page="privacy">Privacy</a></li>
+        </ul>
+      </nav>
+      <div class="copyright">© 2025 All rights reserved</div>
+    </footer>
+    <script type="text/javascript" src="js/functions-min.js"></script>
+  </body>
+</html>

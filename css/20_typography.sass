@@ -1,0 +1,85 @@
+*, html
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  -webkit-text-size-adjust: 100%
+  -moz-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+  text-size-adjust: 100%
+  font-size: 16px
+  line-height: 140%
+  font-weight: 400
+  letter-spacing: -1%
+  color: $textlight
+
+::selection
+  background-color: $yellow500
+  color: $textdark
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 700
+
+h1
+  font-size: $u24
+
+h2
+  font-size: $u20
+
+h3
+  font-size: $u18
+
+p
+  line-height: 130%
+
+.logo a
+  text-decoration: none
+  font-size: $u28
+  font-weight: 700
+  border-radius: $u8
+  padding: $u4
+  margin: -($u4)
+  white-space: nowrap
+  span
+    filter: drop-shadow(0 0 $u4 $yellow500)
+
+a
+  text-decoration: underline
+  color: $yellow500
+
+button a
+  text-decoration: none
+  color: $textlight
+
+strong
+  font-weight: 800
+
+code
+  padding: $u2 $u4
+  border-radius: $u4
+  border: $u1 solid $yellow800
+  background-color: $purple700
+  font-size: $u14
+  font-family: monospace
+  color: $yellow500
+
+svg
+  height: $u20
+  width: $u20
+
+ul, ol
+  padding-left: $u16
+ul
+  list-style: disc
+ol
+  list-style: decimal
+
+@media screen and (min-width: 480px)
+//
+
+@media screen and (min-width: 768px)
+  *, html
+    font-size: 18px
+
+@media screen and (min-width: 1024px)
+//

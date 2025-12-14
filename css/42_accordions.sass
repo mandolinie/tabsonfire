@@ -1,0 +1,68 @@
+#info-accordions
+  display: flex
+  flex-direction: column
+  gap: $u16
+  margin: $u16 0
+
+details
+  display: flex
+  flex-direction: column
+  padding: 0 $u24 $u24
+  border-radius: $u16
+  @include outline
+
+details[open]
+  gap: $u24
+  background-color: rgba($purple900, .5)
+
+summary::-webkit-details-marker
+  display: none
+
+summary
+  position: relative
+  padding: $u24
+  margin-right: -($u24)
+  margin-bottom: -($u24)
+  margin-left: -($u24)
+  border-radius: $u16
+  list-style: none
+  &::before
+    content: ""
+    position: absolute
+    right: $u24
+    height: $u24
+    width: $u24
+    transform: rotate(0deg)
+    transition: transform .2s ease
+    background-image: url("/img/chevron-down.svg")
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+  &:hover
+    cursor: pointer
+
+details[open] summary
+  &::before
+    transform: rotate(180deg)
+
+.content
+  display: flex
+  flex-direction: column
+  gap: $u16
+  padding-top: $u24
+  margin-top: $u2
+  border-top: $u1 dotted rgba($white, .25)
+
+.question
+  margin-bottom: -($u12)
+.answer
+  font-style: italic
+
+@media screen and (min-width: 480px)
+//
+
+@media screen and (min-width: 768px)
+//
+
+@media screen and (min-width: 1024px)
+//

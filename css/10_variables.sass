@@ -1,0 +1,85 @@
+$dark-purple: rgba(40, 20, 80, 1)
+$primary: #FFDC00
+$secondary: rgba(20, 0, 60, 0.6)
+$textdark: rgba(20, 0, 60, 1)
+
+
+// Units
+$u1: .0625rem
+$u2: .125rem
+$u4: .25rem
+$u8: .5rem
+$u12: .75rem
+$u14: .875rem
+$u16: 1rem
+$u18: 1.125rem
+$u20: 1.25rem
+$u24: 1.5rem
+$u28: 1.725rem
+$u32: 2rem
+$u40: 2.5rem
+$u48: 3rem
+
+// Breakpoints
+$small: 32rem
+$medium: 48rem
+$large: 64rem
+
+// Colors
+$white: #ffffff
+
+$placeholder: #989898
+$textdark: #1a191d
+$textlight: #ffffff
+
+$purple50: #efecfa
+$purple100: #dfd9f6
+$purple200: #beb1ec
+$purple300: #a18be3
+$purple400: #8461d7
+$purple500: #693dc0
+$purple600: #462784
+$purple700: #281450
+$purple800: #1f0e41
+$purple900: #12072a
+$purple950: #0a031c
+
+$yellow50:  #fffef0
+$yellow100: #fffad1
+$yellow200: #fff29a
+$yellow300: #ffe45a
+$yellow400: #ffd028
+$yellow500: #f6c200
+$yellow600: #d8a800
+$yellow700: #ad8600
+$yellow800: #876800
+$yellow900: #5f4a00
+$yellow950: #352900
+
+$red50: #fdeded
+$red100: #fad8d7
+$red200: #f6afac
+$red300: #f3837d
+$red400: #f14a3c
+$red500: #c3372a
+$red600: #96281e
+$red700: #751d15
+$red800: #53120c
+$red900: #370905
+$red950: #230402
+
+// mixins
+
+@mixin glass
+  background-color: rgba($purple50, .1)
+  background: linear-gradient(to bottom right, rgba($purple100, .2), rgba($purple600, .2))
+
+@mixin glasshover
+  background-color: rgba($purple50, .1)
+  background: linear-gradient(to bottom right, rgba($purple100, .4), rgba($purple600, .4))
+
+@mixin outline
+  border-top: $u1 solid rgba($purple50, .5)
+  border-bottom: $u1 solid rgba($purple50, .25)
+  backdrop-filter: blur(1rem)
+  box-shadow: 0 0 $u1 0 rgba($purple50, .5), 0 $u8 $u16 rgba($purple950, .1), inset $u16 $u32 $u16 0 rgba($purple900, .1)

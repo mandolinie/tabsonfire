@@ -1,0 +1,56 @@
+button
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: $u4
+  border-radius: $u8
+  font-weight: 700
+  &:hover
+    cursor: pointer
+
+.primary
+  color: $textdark
+  background-color: $yellow400
+  &:hover
+    background-color: $yellow500
+  svg path
+    fill: $textdark
+
+.secondary
+  color: $textlight
+  background-color: $purple800
+  &:hover
+    background-color: $purple900
+  svg path
+    fill: $textlight
+
+.danger
+  color: $textlight
+  background-color: rgba($red700, .5)
+  &:hover
+    background-color: $red800
+  svg path
+    fill: $textlight
+
+.upBtn, .downBtn, .removeBtn
+  display: flex
+  align-items: center
+  justify-content: center
+  max-width: 100%
+
+.removeBtn
+  max-width: $u48
+
+.disabled
+  opacity: .25
+  pointer-events: none
+
+@media screen and (min-width: 480px)
+  .upBtn, .downBtn, .removeBtn
+    max-width: $u48
+
+@media screen and (min-width: 768px)
+//
+
+@media screen and (min-width: 1024px)
+//
