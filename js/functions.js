@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const declineButton = document.getElementById('cookiesDeclineButton');
 
   // Always check localStorage
-  const cookieDecision = localStorage.getItem('TabsOnFireCookies');
+  const cookieDecision = localStorage.getItem('TabsOnFire 🔥🗂️ Cookies');
 
   if (!cookieDecision) {
     cookiesBanner.style.display = 'block';
@@ -18,14 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Accept button
   acceptButton.addEventListener('click', function () {
-    localStorage.setItem('TabsOnFireCookies', 'accepted');
+    localStorage.setItem('TabsOnFire 🔥🗂️ Cookies', 'accepted');
     cookiesBanner.style.display = 'none';
     loadGoogleAnalytics();
   });
 
   // Decline button
   declineButton.addEventListener('click', function () {
-    localStorage.setItem('TabsOnFireCookies', 'declined');
+    localStorage.setItem('TabsOnFire 🔥🗂️ Cookies', 'declined');
     cookiesBanner.style.display = 'none';
   });
 
