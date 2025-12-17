@@ -7,10 +7,13 @@ html(lang="en")
     template#arrowTemplate
       .actions
         button.upBtn.secondary
+          span.sr-only Move tab up
           include img/north.svg
         button.downBtn.secondary
+          span.sr-only Move tab down
           include img/south.svg
         button.removeBtn.danger
+          
           include img/trash.svg
     main
       .panel
@@ -20,19 +23,25 @@ html(lang="en")
             input.url-input(type='text' placeholder='https://www.example.com')
             .actions
               button.upBtn.secondary
+                span.sr-only Move tab up
                 include img/north.svg
               button.downBtn.secondary
+                span.sr-only Move tab down
                 include img/south.svg
               button.removeBtn.danger
+                span.sr-only Remove tab
                 include img/trash.svg
           .input-wrapper
             input.url-input(type='text' placeholder='https://www.example.com')
             .actions
               button.upBtn.secondary
+                span.sr-only Move tab up
                 include img/north.svg
               button.downBtn.secondary
+                span.sr-only Move tab down
                 include img/south.svg
               button.removeBtn.danger
+                span.sr-only Remove tab
                 include img/trash.svg
         button#addBtn.secondary
           include img/add.svg

@@ -148,9 +148,10 @@ ol {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-*:focus-visible, *::before:focus-visible, *::after:focus-visible {
-  outline: 2px solid #ffffff;
-  outline-offset: 2px;
+
+*:focus-visible, html:focus-visible {
+  outline: 0.125rem solid #ffffff;
+  outline-offset: 0.125rem;
 }
 
 html {
@@ -176,6 +177,18 @@ body {
   background-color: #1f0e41;
   background: -webkit-gradient(linear, left top, left bottom, from(#462784), to(#1f0e41));
   background: linear-gradient(to bottom, #462784, #1f0e41);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 header, main, footer {
@@ -297,6 +310,7 @@ input, textarea {
 }
 input:focus-visible, textarea:focus-visible {
   outline: 0.125rem solid #ffd028;
+  outline-offset: 0.125rem;
 }
 
 input::-webkit-input-placeholder {
