@@ -1,6 +1,6 @@
-*, html
+*, *::before, *::after
   box-sizing: border-box
-  &:focus
+  &:focus-visible
     outline: 2px solid $white
     outline-offset: 2px
 
@@ -88,7 +88,7 @@ input, textarea
   border-radius: $u4
   font-weight: 400
   color: $textdark
-  &:focus
+  &:focus-visible
     outline: $u2 solid $yellow400
 
 input::placeholder

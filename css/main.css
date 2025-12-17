@@ -144,11 +144,11 @@ ol {
     font-size: 18px;
   }
 }
-*, html {
+*, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-*:focus, html:focus {
+*:focus-visible, *::before:focus-visible, *::after:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
@@ -295,7 +295,7 @@ input, textarea {
   font-weight: 400;
   color: #1a191d;
 }
-input:focus, textarea:focus {
+input:focus-visible, textarea:focus-visible {
   outline: 0.125rem solid #ffd028;
 }
 
